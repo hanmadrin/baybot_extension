@@ -1,0 +1,40 @@
+{
+  "name": "BayBot",
+  "description": "Automatic Ebay Listing Bot",
+  "version": "1.0",
+  "manifest_version": 2,
+  "author": "Md. Hasan Mahmud Rimon",
+  "permissions": [
+    "activeTab",
+    "storage",
+    "unlimitedStorage",
+    "cookies",
+    "*://*.ebay.com/*"
+  ],
+  "web_accessible_resources": [
+    "notify.mp3"
+  ],
+  "browser_action": {
+    "default_title": "BayBot",
+    "default_popup": "popup/popup.html"
+  },
+  "background": {
+    "scripts": [
+      "background.js"
+    ],
+    "persistent": false
+  },
+  "content_scripts": [
+    {
+      "matches": [
+        "*://*.ebay.com/*"
+      ],
+      "js": [
+        "content.js"
+      ],
+      "css": [
+        "content.css"
+      ]
+    }
+  ]
+}
